@@ -40,15 +40,15 @@ public class Employees {
         this.department = department;
     }
 
-    public int getSalary() {
+    public double getSalary() {
         return salary;
     }
 
-    public void setSalary(int salary) {
+    public void setSalary(double salary) {
         this.salary = salary;
     }
 
-    public Employees(String name, int age, String department, int salary) {
+    public Employees(String name, int age, String department, double salary) {
         this.name = name;
         this.age = age;
         this.department = department;
@@ -57,5 +57,5 @@ public class Employees {
 
     private int age;
     private String department;
-    private int salary;
+    private double salary;
 }

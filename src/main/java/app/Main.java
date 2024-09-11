@@ -93,12 +93,15 @@ public class Main {
         );
 
         // Calculate the total sum of all transaction amounts
+/*
         double totalSumOfTransactions = transactions.stream()
                 .mapToDouble(Transaction::getAmount)
                 .sum();
         System.out.println("Total sum of all transactions: " + totalSumOfTransactions);
+*/
 
         // Group transactions by currency and calculate sum for each currency
+/*
         Map<String, Double> amountSumsByCurrency = transactions.stream()
                 .collect(Collectors.groupingBy(
                         Transaction::getCurrency,
@@ -109,22 +112,45 @@ public class Main {
         amountSumsByCurrency.forEach((currency, sum) ->
                 System.out.println(currency + ": " + sum));
 
+*/
 
         // Find the highest transaction amount
+/*
         Transaction highestTransaction = transactions.stream()
                 .reduce((transaction1, transaction2) -> transaction1.getAmount() > transaction2.getAmount() ? transaction1 : transaction2)
                 .orElse(null);
 
         double highestTransactionAmount = highestTransaction != null ? highestTransaction.getAmount() : 0.0;
-
-        // Print the highest transaction amount
         System.out.println("Highest transaction amount: " + highestTransactionAmount);
+*/
 
         // Find the average transaction amount
-        double averageAmount = transactions.stream()
+/*        double averageAmount = transactions.stream()
                 .collect(Collectors.averagingDouble(Transaction::getAmount));
         System.out.println("Average transaction amount: " + averageAmount);
+    }*/
+
+
+        List<Employees> employees = Arrays.asList(
+                new Employees("Alice", 30, "HR", 50000.00),
+                new Employees("Bob", 45, "IT", 70000.00),
+                new Employees("Charlie", 28, "Finance", 55000.00),
+                new Employees("Diana", 40, "IT", 80000.00),
+                new Employees("Edward", 35, "Finance", 60000.00),
+                new Employees("Fiona", 32, "HR", 52000.00),
+                new Employees("George", 50, "IT", 90000.00),
+                new Employees("Hannah", 29, "Finance", 58000.00)
+        );
+
+        //Calculate the average age of all employees.
+//        double averageAge = employees.stream()
+//                .collect(Collectors.averagingDouble(Employees::getAge));
+//        System.out.println("Average age: " + averageAge);
+
+        //Find the employee with the highest salary.
     }
 
-};
+}
+
+
 
