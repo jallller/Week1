@@ -22,28 +22,33 @@ public class Main {
         );
 
         // Filter and display books published after a specific year
-/*
-        int minPublicationYear = 1950;
-        List<Book> booksPublishedAfter = sampleBooks.stream()
-                .filter(book -> book.getPublicationYear() > minPublicationYear)
-                .collect(Collectors.toList());
-        System.out.println("Books published after " + minPublicationYear + ":");
-        booksPublishedAfter.forEach(System.out::println);
-*/
+//        int minPublicationYear = 1950;
+//        List<Book> booksPublishedAfter = sampleBooks.stream()
+//                .filter(book -> book.getPublicationYear() > minPublicationYear)
+//                .collect(Collectors.toList());
+//        System.out.println("Books published after " + minPublicationYear + ":");
+//        booksPublishedAfter.forEach(System.out::println);
 
 
         //Sort books by rating in descending order.
-        List<Book> sortedBooksByRatingDesc = sampleBooks.stream()
-                .sorted(Comparator.comparingDouble(Book::getRating).reversed())
-                .collect(Collectors.toList());
+//        List<Book> sortedBooksByRatingDesc = sampleBooks.stream()
+//                .sorted(Comparator.comparingDouble(Book::getRating).reversed())
+//                .collect(Collectors.toList());
+//
+//        System.out.println("Books sorted by rating (descending):");
+//        sortedBooksByRatingDesc.forEach(System.out::println);
 
-        System.out.println("Books sorted by rating (descending):");
-        sortedBooksByRatingDesc.forEach(System.out::println);
+
+        // Find and display the title of the book with the highest rating
+
+        Book titleOfBookHighest = sampleBooks.stream()
+                .reduce((book1, book2) -> book1.getRating() > book2.getRating() ? book1 : book2)
+                .orElse(null);
+        System.out.println("Book with the highest rating: " + titleOfBookHighest.getTitle());
+
 
     }
 
-
-    //Find and display the title of the book with the highest rating.
 
     //Group books by author and calculate the average rating for each author’s books.
 
