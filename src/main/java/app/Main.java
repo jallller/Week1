@@ -157,6 +157,7 @@ public class Main {
 
         //Group employees by department and calculate the average salary for each department.
 
+/*
         Map<Double, Double> amountSumsByDepartment = employees.stream()
                 .collect(Collectors.groupingBy(
                         Employees::getSalary,
@@ -166,6 +167,33 @@ public class Main {
         double averageSalary = employees.stream()
                 .collect(Collectors.averagingDouble(Employees::getSalary));
         System.out.println("Average salary by department: " + averageSalary);
+*/
+
+
+        //Count the number of employees in each department.
+/*
+        Map<String, Long> employeeCountPerDept = employees.stream()
+                .collect(Collectors.groupingBy(
+                        Employees::getDepartment, // Group by department
+                        Collectors.counting() // Count employees in each group
+                ));
+        System.out.println("Number of employees in each department:");
+        employeeCountPerDept.forEach((department, count) ->
+                System.out.println(department + ": " + count));
+*/
+
+        //Find the three oldest employees.
+
+        int salaryThreshold = 70000;
+        List<Employees> salaryOverThreshold = employees.stream()
+                .filter(employee -> employee.getSalary() > salaryThreshold)
+                .collect(Collectors.toList());
+        System.out.println("Salary over threshold " + salaryThreshold + ":");
+        salaryOverThreshold.forEach(System.out::println);
+
+
+        //Filter and display employees whose salary is above a certain threshold.
+
 
 
     }
