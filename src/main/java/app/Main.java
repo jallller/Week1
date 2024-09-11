@@ -143,11 +143,18 @@ public class Main {
         );
 
         //Calculate the average age of all employees.
-//        double averageAge = employees.stream()
-//                .collect(Collectors.averagingDouble(Employees::getAge));
-//        System.out.println("Average age: " + averageAge);
+/*        double averageAge = employees.stream()
+                .collect(Collectors.averagingDouble(Employees::getAge));
+        System.out.println("Average age: " + averageAge);*/
 
         //Find the employee with the highest salary.
+        Employees highestSalary = employees.stream()
+                .reduce((employees1, employees2) -> employees1.getSalary() > employees2.getSalary() ? employees1 : employees2)
+                .orElse(null);
+
+        double highestSalaryAmount = highestSalary != null ? highestSalary.getSalary() : 0.0;
+        System.out.println("Highest salary: " + highestSalaryAmount);
+
     }
 
 }
