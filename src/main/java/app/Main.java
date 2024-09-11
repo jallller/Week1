@@ -148,12 +148,25 @@ public class Main {
         System.out.println("Average age: " + averageAge);*/
 
         //Find the employee with the highest salary.
-        Employees highestSalary = employees.stream()
+/*        Employees highestSalary = employees.stream()
                 .reduce((employees1, employees2) -> employees1.getSalary() > employees2.getSalary() ? employees1 : employees2)
                 .orElse(null);
 
         double highestSalaryAmount = highestSalary != null ? highestSalary.getSalary() : 0.0;
-        System.out.println("Highest salary: " + highestSalaryAmount);
+        System.out.println("Highest salary: " + highestSalaryAmount);*/
+
+        //Group employees by department and calculate the average salary for each department.
+
+        Map<Double, Double> amountSumsByDepartment = employees.stream()
+                .collect(Collectors.groupingBy(
+                        Employees::getSalary,
+                        Collectors.averagingDouble(Employees::getSalary)
+                ));
+
+        double averageSalary = employees.stream()
+                .collect(Collectors.averagingDouble(Employees::getSalary));
+        System.out.println("Average salary by department: " + averageSalary);
+
 
     }
 
