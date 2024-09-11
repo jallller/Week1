@@ -7,6 +7,7 @@ import app.Book;
 
 public class Main {
     public static void main(String[] args) {
+/*
 
         List<Book> sampleBooks = Arrays.asList(
                 new Book("The Catcher in the Rye", "J.D. Salinger", 1951, 277, 4.1),
@@ -70,7 +71,30 @@ public class Main {
         System.out.println("Number of pages all books: " + numberOfPagesAllBooks);
 
     }
+*/
 
+        //CollectorExercise
+        List<Transaction> transactions = List.of(
+                new Transaction(1, 100.0, "USD"),
+                new Transaction(2, 150.0, "EUR"),
+                new Transaction(3, 200.0, "USD"),
+                new Transaction(4, 75.0, "GBP"),
+                new Transaction(5, 120.0, "EUR"),
+                new Transaction(6, 300.0, "GBP")
+        );
+
+        // Calculate the total sum of all transaction amounts
+        double totalSum = transactions.stream()
+                .mapToDouble(Transaction::getAmount)
+                .sum();
+        System.out.println("Total sum of all transactions: " + totalSum);
+
+        // Group transactions by currency and calculate sum for each currency
+
+        // Find the highest transaction amount
+
+        // Find the average transaction amount
+    }
 
 };
 
