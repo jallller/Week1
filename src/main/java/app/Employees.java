@@ -1,7 +1,18 @@
 package app;
 
+import java.time.LocalDate;
+
 public class Employees {
     private String name;
+    private LocalDate localDate;
+
+    public LocalDate getLocalDate() {
+        return localDate;
+    }
+
+    public void setLocalDate(LocalDate localDate) {
+        this.localDate = localDate;
+    }
 
     @Override
     public String toString() {
@@ -13,8 +24,6 @@ public class Employees {
                 '}';
     }
 
-    public Employees() {
-    }
 
     public String getName() {
         return name;
