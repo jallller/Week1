@@ -7,6 +7,8 @@ import java.util.stream.Collectors;
 
 import app.Book;
 
+import static app.ArithmeticOperation.ResultOP;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -599,6 +601,28 @@ public class Main {
 
 
          */
+
+/*
+        ArithmeticOperation addition = (a, b) -> a + b;
+        System.out.println("Addition: " + ResultOP(5, 3, addition));
+
+        ArithmeticOperation subtraction = (a, b) -> a - b;
+        System.out.println("subtraction: " + ResultOP(5, 3, subtraction));
+
+        ArithmeticOperation multiplication = (a, b) -> a * b;
+        System.out.println("multiplication: " + ResultOP(5, 3, multiplication));
+
+        ArithmeticOperation division = (a, b) -> a / b;
+        System.out.println("division: " + ResultOP(5, 3, addition));
+
+        ArithmeticOperation modulus = (a, b) -> a % b;
+        System.out.println("modulus: " + ResultOP(5, 3, modulus));
+
+        ArithmeticOperation power = (a, b) -> (int) Math.pow(a, b);
+        System.out.println("the power of: " + ResultOP(5, 3, power));
+*/
+
+
 
     }
 
